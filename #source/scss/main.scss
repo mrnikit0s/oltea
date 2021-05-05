@@ -1,0 +1,20 @@
+* {
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+}
+
+@mixin fnt($fw, $fz, $lh) {
+    font-weight: $fw;
+    font-size: $fz + px;
+    line-height: $lh + px;
+}
+
+html {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
