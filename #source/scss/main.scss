@@ -6,6 +6,7 @@
 
 body {
     height: 100%;
+    font-family: 'Century Gothic', sans-serif;
 }
 
 @mixin fnt($fw, $fz, $lh) {
@@ -14,7 +15,258 @@ body {
     line-height: $lh + px;
 }
 
-html {
-    margin: 0px 0px 0px 0px;
-    padding: 0px 0px 0px 0px;
+
+/*----------------------------------------*/
+
+$mw: 1920;
+$mw1: 1440;
+$mw2: 1024;
+$mw3: 768;
+$mw4: 320;
+
+/*----------------------------------------*/
+
+.container {
+    max-width: 1780px;
+    width: 100%;
+    margin: 0px auto;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn span {
+    padding: 20px 45px 20px 45px;
+}
+
+
+/******************************************************************************/
+
+.header {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    // .header__content
+    &__content {
+        width: 100%;
+    }
+    // .header__row
+    &__row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__r {
+        display: flex;
+    }
+    &__l {
+        display: flex;
+    }
+    // .header__burger
+    &__burger {}
+    // .header__logo
+    &__logo {
+        // margin: 0px 40px 0px 0px;
+        display: flex;
+        align-items: center;
+        flex: 0 0 110px;
+    }
+    &__logo img {
+        width: 100%;
+        display: block;
+    }
+    // .header__time
+    &__time {
+        // margin: 0px 82px 0px 0px;
+        display: flex;
+    }
+    // .header__call
+    &__call {
+        // margin: 0px 38px 0px 0px;
+        background: #BB5986;
+    }
+    &__call span {
+        @include fnt(700, 16, 19.62);
+        color: #fff;
+    }
+    // .header__phone
+    &__phone {
+        display: flex;
+        flex-direction: column;
+    }
+    &__phone span {
+        @include fnt(700, 16, 19.62);
+        color: #20663C;
+    }
+    &__phone span:first-child {
+        margin: 0px 0px 5px 0px;
+    }
+    // .header__menu
+    &__menu {}
+    // .header__list
+    &__list {
+        display: flex;
+        flex-direction: row;
+    }
+    &__list li {
+        margin: 0px 31.5px 0px 31.5px;
+        list-style: none;
+    }
+    // .header__link
+    &__link {
+        text-decoration: none;
+        @include fnt(400, 16, 19.62);
+        color: #20663C;
+    }
+    // .header__r
+    &__r {
+        display: flex;
+        align-items: center;
+    }
+    // .header__profile
+    &__profile {}
+    // .header__basket
+    &__basket {
+        margin: 0px 11px 0px 11px;
+    }
+    // .header__sum
+    &__sum {
+        padding: 5px 16px;
+        display: flex;
+        align-items: center;
+        background: #F4B6D0;
+        border-radius: 5px;
+    }
+    &__sum span {
+        @include fnt(700, 18, 22.07);
+        color: #BB5986;
+    }
+    &__sum>span {
+        margin: 0px 5px 0px 0px;
+    }
+}
+
+.time {
+    // .time__l
+    &__l {
+        margin: 0px 16px 0px 0px;
+        max-width: 57px;
+    }
+    &__l img {
+        display: block;
+        width: 100%;
+    }
+    // .time__r
+    &__r {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    &__r span {
+        @include fnt(700, 14, 16.41);
+        color: #BB5986;
+    }
+    &__r span:first-child::after {
+        content: '';
+        margin: 5px 0px 5px 0px;
+        position: relative;
+        display: flex;
+        height: 1px;
+        width: 100px;
+        background-color: #BB5986;
+    }
+}
+
+
+/****************************************************************************/
+
+.nav {
+    display: flex;
+    align-items: center;
+    background: #D1ECC4;
+    height: 60px;
+    width: 100%;
+    // .nav__content
+    &__content {}
+    // .nav__row
+    &__row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    // .nav__list
+    &__list {
+        display: flex;
+    }
+    &__list li {
+        list-style: none;
+        margin: 0px 45px 0px 0px;
+    }
+    // .nav__link
+    &__link {
+        text-decoration: none;
+        @include fnt(700, 16, 19.62);
+        color: #568668;
+    }
+    // .nav__search
+    &__search {
+        width: 580px;
+    }
+    &__search input {
+        width: 100%;
+    }
+    &__search input::placeholder {}
+}
+
+@media (max-width: $mw1+10px) {
+    .container {
+        max-width: $mw1 + px;
+        width: 100%;
+        margin: 0px auto;
+    }
+    .header {
+        &__list {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: $mw2+10px) {
+    .container {
+        max-width: $mw2 + px;
+        width: 100%;
+        margin: 0px auto;
+    }
+    .btn span {
+        padding: 11px 17px;
+    }
+    .header {
+        &__phone {
+            display: none;
+        }
+        &__time {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: $mw3+10px) {
+    .container {
+        max-width: $mw3 + px;
+        width: 100%;
+        margin: 0px auto;
+    }
+    .header {
+        &__row {
+            justify-content: space-between;
+        }
+        &__r {
+            display: none;
+        }
+    }
 }
